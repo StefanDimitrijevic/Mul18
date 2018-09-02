@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* CSS Document */
+
+form {
+	max-width: 250px;
+	padding: 30px;
+	background-color: whitesmoke;
+	margin: 30px;
+}
+
+#one label {
+	display: block;
+	margin: 10px 0 3px 0;
+}
+
+#two {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+
+}
+
+#two div {
+	margin-bottom: 10px;
+}
+
+#three div {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+#four input {
+	margin-bottom: 10px;
+}
+
+#primary {
+	background: lightgray;
+}
+
+#secondary {
+	border: none;
+	text-decoration: underline;
+}
