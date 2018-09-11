@@ -24,7 +24,7 @@ $userid = $_SESSION['users_id'];
 	$stmt ->bind_param('ii', $postitid, $userid);
 	$stmt -> execute();
 	
-	if ($postitid == $userid) {
+	if ($postitid == $userid ) {
 	echo 'Deleted '.$stmt->affected_rows.' Post-it notes';
 	} else {
 	echo 'You dont have permission to delete this.';

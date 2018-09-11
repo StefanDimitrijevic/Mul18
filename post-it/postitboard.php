@@ -1,51 +1,61 @@
+<?php
+	session_start();
+?>
+
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
-<style>
-	
-.postit {
-	margin: 10px auto;
-	width: 200px;
-	height: 200px;
-	padding: 15px;
-	box-shadow: 2px 3px 5px -3px black;
-	border-bottom-right-radius: 130px 7px;
-	/* transform: rotate(-3deg); */
-	font-family: 'Indie Flower', cursive;		
-}
-	
-	p {
-		font-size: 10px;
-	}
-	
-</style>
+<title>Dashboard</title>
+<link rel="stylesheet" href="boardstyle.css">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 </head>
 
 <body>
-	
+
+	 <h1>POST IT WALL</h1>
+	<div class="container">
 	<?php
 	require_once('dbcon.php');
-	$sql = 'SELECT postit.id, createdate, header, bodytext, author, cssclass FROM postit, color WHERE color_id=color.id';
+	$sql = 'SELECT postit.id AS pid, date(createdate), header, bodytext, users_id AS uid, username, cssclass 
+	FROM users, postit, color
+	WHERE users_id = users.id AND color_id = color.id';
 	
 	$stmt = $link->prepare($sql);
 	$stmt->execute();
-	$stmt->bind_result($pid, $createdate, $htext, $btext, $author, $cssclass);
+	$stmt->bind_result($pid, $createdate, $htext, $btext, $uid, $username, $cssclass);
 	
 	while($stmt->fetch()) { ?>
-		<div class="<?=$cssclass?>">
-		<form class="postit" style="background-color:<?= $cssclass; ?>;">
-		<p><?=$createdate?></p>
-		<h1><?=$htext?></h1>
-		<p><?=$btext?></p>
-		<p><?=$author?></p>
+		
+		<div class="<?=$cssclass?> postit" >
+			<?php
+			if(isset($_SESSION['users_id']))
+			?>
+		<form action="deletepostit.php" method="post">	
+			<input type="hidden" name="pid" value="<?=$pid?>">
+			<input type="image" src="trash-copy.png" alt="Delete">
 		</form>
+		<time><?=$createdate?></time>
+		<h2><?=$htext?></h2>
+		<p class="tbody"><?=$btext?></p>
+		<p class="auth"><?=$username?></p>
 		</div>
+		
 	
 	<?php
 	} 
 	?>
+
+	</div>
 	
+	<a href="createpostit.php">Add Post-it</a><br>
+	
+	<form action="logout.php" method="post">
+	<button type="submit">Logout</button>
+	</form> 
+	
+	<?php
+	echo '(Logged in as ' .$_SESSION['users_id'].')';
+	?>
 </body>
 </html>

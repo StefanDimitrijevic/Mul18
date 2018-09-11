@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -52,7 +56,6 @@ body {
 		<form class="postit" action="docreatepostit.php" method="post">
 		<input class="head" type="text" name="header" placeholder="Title"><br>
 		<textarea class="tArea1" type="text" name="bodytext" placeholder="Content here.."></textarea><br>
-		<input class="name" type="text" name="author" placeholder="Author name"><br><br>
 		
 		Color:
 		<select name="colorid" required>
@@ -70,15 +73,9 @@ body {
 			
 ?>		
 			
-			
-			
-			
-			
-
-			
-			
 		</select><br><br>
 		<button type="submit">Submit</button>
+			
 	</form>
 </body>
 </html>
