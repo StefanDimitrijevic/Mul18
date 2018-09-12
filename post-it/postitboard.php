@@ -12,6 +12,18 @@
 </head>
 
 <body>
+	
+	<!-- <nav>
+	<ul>
+		<li><a href="postitboard.php">Post-it Board</a></li>
+		<li><a href="createpostit.php">Create Post-it</a></li>
+		<li><a>Logged in as <?=$_SESSION['uname']?></a></li>
+		<li><a href="logout.php">Logout</a></li>
+
+	</ul>
+	</nav> -->
+	
+	<?php include('navbar.php'); ?>
 
 	 <h1>POST IT WALL</h1>
 	<div class="container">
@@ -28,13 +40,17 @@
 	while($stmt->fetch()) { ?>
 		
 		<div class="<?=$cssclass?> postit" >
-			<?php
-			if(isset($_SESSION['users_id']))
-			?>
-		<form action="deletepostit.php" method="post">	
+		
+		<?php
+		if (isset($_SESSION['users_id']) AND $_SESSION['users_id'] == $uid OR $_SESSION['users_id'] === 1){ ?>	
+			<form action="deletepostit.php" method="post">	
 			<input type="hidden" name="pid" value="<?=$pid?>">
-			<input type="image" src="trash-copy.png" alt="Delete">
-		</form>
+			<input class="img" type="image" src="trash.png" alt="Delete">
+			</form>
+		<?php } else { ?>
+
+		<?php } ?>
+
 		<time><?=$createdate?></time>
 		<h2><?=$htext?></h2>
 		<p class="tbody"><?=$btext?></p>
@@ -48,14 +64,11 @@
 
 	</div>
 	
-	<a href="createpostit.php">Add Post-it</a><br>
+	<!-- <a href="createpostit.php">Add Post-it</a><br>
 	
-	<form action="logout.php" method="post">
+	 <form action="logout.php" method="post">
 	<button type="submit">Logout</button>
-	</form> 
+	</form> -->
 	
-	<?php
-	echo '(Logged in as ' .$_SESSION['users_id'].')';
-	?>
 </body>
 </html>
