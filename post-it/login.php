@@ -26,7 +26,7 @@ $pw = filter_input(INPUT_POST, 'pw') or die ('Missing or illegal pw parameter');
 	while ($stmt->fetch()) {}
 	
 	if(password_verify($pw, $pwhash)){
-			echo 'Username and password matched user with id: '.$id.'';
+			echo 'Username and password matched user with id: '.$id.' <a href="postitboard.php">Advance to board!</a> ';
 			$_SESSION['users_id'] = $id;
 			$_SESSION['uname'] = $un;
 		} else {
@@ -34,14 +34,8 @@ $pw = filter_input(INPUT_POST, 'pw') or die ('Missing or illegal pw parameter');
 		}
 	
 	
-	/* if(!isset($_SESSION['users_id'])) {
-		echo "You are not logged in!";
-	} else {
-		echo "You are logged in!";
-	} */
-	
 	
 ?>
-	<a href="postitboard.php">Advance to board!</a>
+	<!-- <a href="postitboard.php">Advance to board!</a> -->
 </body>
 </html>

@@ -30,10 +30,11 @@ $pw = filter_input(INPUT_POST, 'pw') or die ('Missing or wrong password');
 	}
 	
 	
-/*	$_SESSION['users_id'] = $uid;
+		$_SESSION['users_id'] = $id;
 		$_SESSION['username'] = $un;
-	echo '(Logged in as ' .$_SESSION['users_id'].')';
-	echo '(Logged in as ' .$_SESSION['username'].')'; */
+	
+	/*  echo '(Logged in as ' .$_SESSION['users_id'].')';
+		echo '(Logged in as ' .$_SESSION['username'].')'; */
 	
 ?>
 	<a href="postitboard.php">Click to proceed!</a>

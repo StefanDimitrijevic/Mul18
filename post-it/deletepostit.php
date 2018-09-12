@@ -19,18 +19,31 @@ $userid = $_SESSION['users_id'];
 	
 	require_once('dbcon.php');
 	
-	$mysqlstring = 'DELETE FROM postit WHERE id=? AND users_id=?';
+	if (intval($userid) === 1) {
+   // admin 
+   $mysqlstring = 'DELETE FROM postit WHERE id=?';
+   $stmt = $link->prepare($mysqlstring);
+   $stmt ->bind_param('i', $postitid);
+ } else {
+   $mysqlstring = 'DELETE FROM postit WHERE id=? AND users_id=?';
+   $stmt = $link->prepare($mysqlstring);
+   $stmt ->bind_param('ii', $postitid, $userid);
+ }
+	/* $mysqlstring = 'DELETE FROM postit WHERE id=? AND users_id=? OR users_id=1';
 	$stmt = $link->prepare($mysqlstring);
-	$stmt ->bind_param('ii', $postitid, $userid);
+	$stmt ->bind_param('iii', $postitid, $userid, $userid); */
 	$stmt -> execute();
 	
-	if ($postitid == $userid ) {
-	echo 'Deleted '.$stmt->affected_rows.' Post-it notes';
+	if ($postitid == $userid) {
+		echo 'Deleted '.$stmt->affected_rows.' Post-it notes';
+	} else if (intval($userid) === 1) {
+		echo 'Deleted '.$stmt->affected_rows.' Post-it notes';
 	} else {
-	echo 'You dont have permission to delete this.';
+		echo 'You dont have permission to do this!';
 	}
 ?>
 	<a href="postitboard.php">Click to see post-its!</a>
+	
 </body>
 </html>
 

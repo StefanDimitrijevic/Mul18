@@ -27,6 +27,8 @@ $userid 	= $_SESSION['users_id'];
 	
 	echo 'Insertet '.$stmt->affected_rows.' new rows in the table';
 	
+	header("Location: postitboard.php"); /* Redirect browser */
+	exit();
 	
 ?>
 	<a href="postitboard.php">Click to see post-its!</a>

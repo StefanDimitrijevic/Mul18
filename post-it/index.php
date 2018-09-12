@@ -2,78 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
+<title>Index</title>
 <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	
-<style>
-	body {
-		margin: 0 auto;
-		background-color: ghostwhite;
-	}
-	
-	.wrapper {
-		margin: 0 auto;
-		margin-top: 100px;
-		width: 700px;
-		height: 400px;
-		background-color: lightgray;
-		display: flex;
-		flex-wrap: wrap;
-	}
-	
-	.header {
-		text-align: center;
-		font-family: 'Indie Flower', cursive;
-	}
-	
-	.register {
-		width: 300px;
-		height: 250px;
-		text-align: center;
-		margin: 0 auto;
-		background-color: rgba(52, 73, 94, 0.7);
-		margin-top: 100px;
-	}
-	
-	.login {
-		width: 300px;
-		height: 250px;
-		text-align: center;
-		margin: 0 auto;
-		background-color: rgba(52, 73, 94, 0.7);
-		margin-top: 100px;
-	}
-	
-	.register img {
-		width: 80px;
-		height: 80px;
-		margin-top: -40px;
-		margin-bottom: 20px;
-	}
-	
-	.login img {
-		width: 80px;
-		height: 80px;
-		margin-top: -40px;
-		margin-bottom: 20px;
-	}
-	input {
-		height: 20px;
-		width: 200px;
-		margin-bottom: 20px;
-		background-color: #fff;
-		padding-left: 10px;
-	}
-	
-	button {
-		background-color: #FFFFFF;
-		border-style: none;
-		font-family: 'Indie Flower', cursive;
-		
-	}
-	
-</style>
+<link rel="stylesheet" href="indexstyle.css">
 </head>
 
 <body>
@@ -84,6 +16,7 @@
 	<div class="wrapper">
 	<div class="register">
 		<img src="register.png">
+		<p>Create a new user</p>
 	<form action="createuser.php" method="post">
 		<div class="form-input">
 		<i class="fas fa-user"></i>
@@ -100,6 +33,7 @@
 	
 	<div class="login">
 		<img src="login.png">
+		<p>Login</p>
 	<form action="login.php" method="post">
 		<div class="form-input">
 		<i class="fas fa-user"></i>
