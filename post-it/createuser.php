@@ -25,16 +25,13 @@ $pw = filter_input(INPUT_POST, 'pw') or die ('Missing or wrong password');
 	
 	if ($stmt->affected_rows > 0 ){
 		echo 'User '.$un.' created :-)';
+		$_SESSION['users_id'] = $stmt->insert_id;
+		$_SESSION['uname'] = $un;
 	} else {
 		echo 'Could not create user - username '.$un.' allready exists!';
 	}
 	
 	
-		$_SESSION['users_id'] = $id;
-		$_SESSION['username'] = $un;
-	
-	/*  echo '(Logged in as ' .$_SESSION['users_id'].')';
-		echo '(Logged in as ' .$_SESSION['username'].')'; */
 	
 ?>
 	<a href="postitboard.php">Click to proceed!</a>

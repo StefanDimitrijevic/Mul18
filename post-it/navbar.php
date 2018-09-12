@@ -1,7 +1,6 @@
 <nav>
-		<ul>
-			<li><a href="postitboard.php">Post-it Board</a>
-			</li>	
+	<ul>
+		<li><a href="postitboard.php">Post-it Board</a></li>	
 			
 			<li>
 				<?php

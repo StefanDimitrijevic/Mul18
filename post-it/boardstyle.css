@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* HEADLINE */
+h1 {
+	font-family: 'Indie Flower', cursive;
+	font-weight: 700;
+	text-align: center;
+}
+
+/* THE CONTAINER FOR ALL THE CONTENT */
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #C0BDBD;
+	box-shadow: 10px 17px 10px #AFA9A9;
+	margin: 0 35px 25px;
+	border-radius: 10px;
+	justify-content: space-around;
+}
+
+/* LAYOUT OF THE POST-IT */
+.postit {
+	margin: 10px 10px 10px 10px;
+	width: 200px;
+	height: 200px;
+	padding: 15px;
+	box-shadow: 2px 3px 5px -3px black;
+	border-bottom-right-radius: 130px 7px;
+	transform: rotate(-3deg);
+	font-family: 'Indie Flower', cursive;		
+}
+
+/* COLOR CLASSES FROM THE DATABASE */
+	
+.blue {
+	background: linear-gradient(135deg, #2E86D2, #75C5E0);
+}
+	
+.green {
+	background: linear-gradient(135deg, #13C521, #87DE76);
+}
+	
+.yellow {
+	background: linear-gradient(135deg, #E9E845, #EBEA95);
+}
+
+/* THE CONTENT OF THE POST-IT */
+	
+time {
+	position: absolute;
+	right: 10;
+	top: 0;
+	font-size: 0.8em;
+}
+	
+.auth {
+	padding: 10px 15px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	font-size: 0.8em;
+}
+
+.tbody p{
+	width: 99%;
+	height: 65%;
+}
+
+.img {
+	padding: 5px 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+nav {
+	color: black;
+	display: flex;
+	align-content: flex-end;
+}
+
+ul {
+	list-style: none;
+	
+}
+
+li {
+	display: inline-block;
+}
+
+li a {
+	text-decoration: none;
+}
+
+li a:hover {
+	color: #c1c1c1;
+}
+
+/* MEDIA QUERIES */

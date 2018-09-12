@@ -34,13 +34,9 @@ $userid = $_SESSION['users_id'];
 	$stmt ->bind_param('iii', $postitid, $userid, $userid); */
 	$stmt -> execute();
 	
-	if ($postitid == $userid) {
+	
 		echo 'Deleted '.$stmt->affected_rows.' Post-it notes';
-	} else if (intval($userid) === 1) {
-		echo 'Deleted '.$stmt->affected_rows.' Post-it notes';
-	} else {
-		echo 'You dont have permission to do this!';
-	}
+	
 ?>
 	<a href="postitboard.php">Click to see post-its!</a>
 	
