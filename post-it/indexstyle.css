@@ -3,7 +3,7 @@
 
 	body {
 		margin: 0 auto;
-		background-color: ghostwhite;
+		background: linear-gradient(to bottom right, #6C6566, #05080A) no-repeat center center fixed;
 	}
 
 p {
@@ -19,12 +19,15 @@ p {
 	}
 	
 	.header {
+		font-size: 1.3em;
+		color: #FFFFFF;
 		text-align: center;
 		font-family: 'Indie Flower', cursive;
 		margin-bottom: 10%;
 	}
 	
 	.register, .login{
+		box-shadow: 2px 2px 10px #000000;
 		width: 300px;
 		height: 250px;
 		text-align: center;

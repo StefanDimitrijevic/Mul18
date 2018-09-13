@@ -13,6 +13,8 @@
 
 <body>
 	
+	<div class="wrapper">
+	
 	<?php include('navbar.php'); ?>
 	
 	 <h1>POST IT WALL</h1>
@@ -85,12 +87,7 @@
 	?>
 
 	</div>
-	
-	<!-- <a href="createpostit.php">Add Post-it</a><br>
-	
-	 <form action="logout.php" method="post">
-	<button type="submit">Logout</button>
-	</form> -->
+	</div>
 	
 </body>
 </html>

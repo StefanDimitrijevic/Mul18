@@ -33,6 +33,7 @@ body {
 	width: 200px;
 	font-family: 'Indie Flower', cursive;
 	border: none;
+	border-bottom: 2px solid lightgrey;
 	font-size: 2em;
 	color: black;
 }
@@ -91,25 +92,17 @@ li a:hover {
 
 <body>
 	
-	<nav>
-	<ul>
-		<li><a href="postitboard.php">Post-it Board</a></li>
-		<li><a href="createpostit.php">Create Post-it</a></li>
-		<li><a>Logged in as <?=$_SESSION['uname']?></a></li>
-		<li><a href="logout.php">Logout</a></li>
-
-	</ul>
-	</nav>
+<?php include('navbar.php'); ?>
 	<h1>Create new Postit</h1>
 	
-		<form class="postit" action="docreatepostit.php" method="post">
-		<input class="head" type="text" name="header" placeholder="Title"><br>
-		<textarea class="tArea1" type="text" name="bodytext" placeholder="Content here.."></textarea><br>
+	<form class="postit" action="docreatepostit.php" method="post">
+	<input class="head" type="text" name="header" placeholder="Title"><br>
+	<textarea class="tArea1" type="text" name="bodytext" placeholder="Content here.."></textarea><br>
 		
-		Pick a color:
-		<select name="colorid" required>
+	Pick a color:
+	<select name="colorid" required>
 		
-<?php
+	<?php
 			require_once('dbcon.php');
 			$sql = 'SELECT id, colorname FROM color';
 			$stmt = $link->prepare($sql);
@@ -120,11 +113,11 @@ li a:hover {
 				echo '<option value="'.$cid.'">'.$cnam.'</option>'.PHP_EOL;
 			}
 			
-?>		
+		?>		
 			
-		</select><br><br>
-		<button type="submit">Submit</button>
-			
+	</select><br><br>
+	<button type="submit">Submit</button>
 	</form>
+	
 </body>
 </html>
