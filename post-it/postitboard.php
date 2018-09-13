@@ -13,19 +13,41 @@
 
 <body>
 	
-	<!-- <nav>
-	<ul>
-		<li><a href="postitboard.php">Post-it Board</a></li>
-		<li><a href="createpostit.php">Create Post-it</a></li>
-		<li><a>Logged in as <?=$_SESSION['uname']?></a></li>
-		<li><a href="logout.php">Logout</a></li>
-
-	</ul>
-	</nav> -->
-	
 	<?php include('navbar.php'); ?>
-
+	
 	 <h1>POST IT WALL</h1>
+	
+	<div class="createP">
+	<form class="postitC" action="docreatepostit.php" method="post">
+	<input class="head" type="text" name="header" placeholder="Enter title here"><br>
+	<textarea class="tArea1" type="text" name="bodytext" placeholder="Enter content here.."></textarea><br>
+		
+	Pick a color:
+	<select name="colorid" required>
+		
+	<?php
+			require_once('dbcon.php');
+			$sql = 'SELECT id, colorname FROM color';
+			$stmt = $link->prepare($sql);
+			$stmt->execute();
+			$stmt->bind_result($cid, $cnam);
+			
+			while($stmt->fetch()){
+				echo '<option value="'.$cid.'">'.$cnam.'</option>'.PHP_EOL;
+			}
+			
+		?>		
+			
+	</select><br><br>
+	<?php
+	if (isset($_SESSION['users_id'])) { ?>
+	<button type="submit">Create Post-it</button>
+	<?php } else { ?> 
+		
+	<?php } ?>
+	</form>
+	</div>
+	
 	<div class="container">
 	<?php
 	require_once('dbcon.php');
