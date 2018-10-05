@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" id="homepage">
+  <div data-role="header">
+   <a href="index.html" data-rel="back" data-role="button" data-transition="slide">Back</a>
+    <h1>Quiz</h1>
+  </div>
+	<div role="main" class="ui-content">
+	<h2>Mini Quiz with JavaScript!</h2>
+<p id="question"></p>
+<form id="myForm" method="post" onsubmit="return validateAnswer()">
+	<p><input type="text" id="input" placeholder="Type your answer..." autofocus></p>
+	<button type="submit" id="submit">Submit your answer!</button>
+</form>
+	</div>
+		<div data-role="footer" data-position="fixed">
+    <p>Casino &copy; 2018</p>
+  </div>
+	</div>
+
+<script>
+	// 2 globale variabler (konstanter)
+	const question = 'Who is the 45th president of the United States of America?';
+	const solution = 'donald trump';
+	
+	var questionText = document.getElementById('question');
+	var myForm = document.getElementById('myForm');
+	//console.log(questionText);
+	questionText.innerHTML = question;
+	
+	function validateAnswer(){
+		//console.log('Besvaret!');
+		let answer = myForm.input.value;
+		console.log(answer);
+		
+		if(answer.toLowerCase() === solution){
+			// do something
+			questionText.innerHTML = 'Correct!'
+		} else {
+			// do something else
+			questionText.innerHTML = 'I\'d like that - but it\'s not true';
+		}
+		
+		// forhindrer, at formen bliver sendt
+		return false;
+	}
+	
+	
+</script>
+</body>
+</html>

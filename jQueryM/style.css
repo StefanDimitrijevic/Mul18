@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Frontpage/ All headers / All footers */
+.ui-footer {
+	position: absolute !important;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	background-color: #191918 !important;
+}
+#output {
+	text-align: center;
+}
+.hidden {
+	display: none;
+}
+p {
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 20px !important;
+}
+.ui-header {
+	background-color: #191918 !important;
+}
+.ui-title {
+	font-size: 30px !important;
+	color: #ffffff !important;
+	text-shadow: 0 0px 0 white !important;
+}
+.ui-footer p {
+	color: #ffffff !important;
+	text-shadow: 0 0px 0 white !important;
+}
+.frontpage {
+	color: #ffffff !important;
+	text-shadow: 0 0px 0 white !important;
+	min-height: 80vh !important;
+	background-image: url(background.jpg)!important;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.ui-link {
+	text-shadow: 0 0px 0 white !important;
+	background-color: #2B2E2E !important;
+	color: #ffffff !important;
+}
+/* Tic Tac Toe Styling */
+	
+#msg {
+	text-align: center;
+}
+.hidden {
+	display: none;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #D7CFCF;
+}
+td {
+	border: 6px solid white;
+	width: 33.333%;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	text-align: center;
+	font-size: 5em;
+	vertical-align: middle;
+}
+/* https://spin.atomicobject.com/2015/07/14/css-responsive-square/ */
+td:after {
+	content: "";
+	display: block;
+	padding-bottom: 10%;
+}
+.preview {
+	text-align: center;
+}
+	
+	.ui-btn-left{
+		margin-top: 20px !important;
+	}
